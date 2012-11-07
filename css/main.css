@@ -1,0 +1,248 @@
+/* -- Media -- */
+@charset "UTF-8";
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700);
+/* -- /Media -- */
+
+
+/* -- Reset -- */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font: inherit;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+/* -- /Reset -- */
+
+
+
+
+/* -- Globals -- */
+
+html, body {
+	width:100%;
+	height:100%;
+	height: 100%;
+	color: #191919;
+	font-family: 'PT Sans', sans-serif;
+}
+
+body {
+	background: url("images/navy_blue.png");
+	background-position: 0% 0%;
+	background-repeat: repeat repeat;
+	position:absolute;
+	top:0;
+	left:0;
+}
+
+h1 {
+	font-size: 1.625em;
+	line-height: 1.84615em;
+	line-height: 1.5em;
+	padding-top: 1.5em;
+	font-weight: bold;
+}
+h2 {
+	font-size: 1.375em;
+	line-height: 2.18182em;
+	line-height: 1.5em;
+	font-weight: bold;
+	-webkit-transition-duration: 250ms;
+	-moz-transition-duration: 250ms;
+	-o-transition-duration: 250ms;
+	transition-duration: 250ms;
+}
+
+p {
+	font-size: 1.125em;
+	line-height: 1.33333em;
+	line-height: 1.8em;
+	font-weight: 100;
+}
+
+p.date {
+	color: #838383;
+}
+
+/* -- /Globals -- */
+
+/* -- Header -- */
+
+.header {
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:40px;
+	background:#333;
+	background: rgba(255, 255, 255, .9);
+	border-bottom:#ddd 2px solid;
+	padding-top:5px;
+}
+
+.header .title {
+	position:relative;
+	margin:0px 5px 5px 15px;
+	width:150px;
+	padding-bottom:3px;
+	border-bottom:8px solid #91B009;
+}
+
+.header .title:hover {
+	border-bottom:12px solid #91B009;
+}
+
+.header .title img {
+	width:140px;
+	z-index:3;
+}
+
+.header .nav {
+	position:absolute;
+	top:10px;
+	right:0;
+	width:400px;
+}
+
+.header .nav li {
+	display:inline-block;
+	list-style:none;
+	margin-right:20px;
+}
+
+.header .nav li a {
+	font-size:24px;
+	text-transform:uppercase;
+	font-weight:700;
+	padding-bottom:6px;
+}
+
+.header .nav li a[href='/#/blog'] {
+	border-bottom:8px solid #0074A6;
+	color:#333;
+	text-decoration:none;
+}
+
+.header .nav li a[href='/#/blog']:hover {
+	border-bottom:12px solid #0074A6;
+	color:#0074A6;
+	text-decoration:none;
+}
+
+
+.header .nav li a[href='/#/about'] {
+	border-bottom:8px solid #09B077;
+	color:#333;
+	text-decoration:none;
+}
+
+.header .nav li a[href='/#/about']:hover {
+	border-bottom:12px solid #09B077;
+	color:#09B077;
+	text-decoration:none;
+}
+
+
+.header .nav li a[href='/#/how'] {
+	border-bottom:8px solid #009900;
+	color:#333;
+	text-decoration:none;
+}
+
+.header .nav li a[href='/#/how']:hover {
+	border-bottom:12px solid #009900;
+	color:#009900;
+	text-decoration:none;
+}
+
+
+
+/* -- /Header -- */
+
+
+
+/* -- Sidebar -- */
+
+.sidebar {
+	position:fixed;
+	background:#222;
+	top:130px;
+	left:0;
+	width:210px;
+	height:340px;
+	padding:20px 0;
+	border-top-right-radius:5px;
+	border-bottom-right-radius:5px;
+}
+
+.sidebar ul {
+	font-size:16px;
+}
+
+.sidebar li {
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+
+.sidebar a {
+	padding:5px 10px;
+	display:block;
+	text-transform:uppercase;
+	font-weight:700;
+	color:#333;
+	text-decoration:none;
+	text-align:right;
+}
+
+.sidebar a[href='/#/graphic'] {
+	background:#90c7b5;
+}
+
+.sidebar a[href='/#/webdev'] {
+	background:#c34820;
+}
+
+.sidebar a[href='/#/appdev'] {
+	background:#a8af3f;
+}
+
+
+/* -- /Sidebar -- */
+
+
+/* -- Body -- */
+.content {
+	width:100%;
+	margin-top:150px;
+	position:relative;
+}
+
+.page-container {
+	margin-left:30px;
+}
+
+
+.page {
+	min-height:300px;
+	border: 1px solid #B5B9B9;
+	border-radius:7px;
+	background:#fff;
+	width:200px;
+	padding:20px;
+	float:left;
+}

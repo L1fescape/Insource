@@ -1,43 +1,50 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>InSource University</title>
+<html>
+	<head>
+		<title>Insource University</title>
 
-<!-- Styles and Icon -->
-<link rel="stylesheet" type="text/css" href="/style/style.css" />
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="images/favicon.png">
+		<!-- /Favicon -->
 
-<!-- Libraries -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
-</head>
+		<!-- jQuery -->
+		<script src="libs/jquery.js"></script>
+		<!-- /jQuery -->
+		
+		<!-- Backbone & Underscore -->
+		<script src="libs/underscore.js"></script>
+		<script src="libs/backbone.js"></script>
+		<!-- /Backbone & Underscore -->
 
-<body>
-	
-<div id="outter">
-	<div id="header">
-		<div id="nav">
-			<ul id="navbar">
-				<li><a class="active" href="#!/">Home</a></li>
-				<li><a href="#!/about">About</a></li>
-				<li><a href="#!/howitworks">How It Works</a></li>
+		<!-- Style -->
+		<link href='css/main.css' rel='stylesheet' type='text/css'>
+		<!-- /Style -->
+	</head>
+	<body>
+		<div class=header>
+			<div class=title><a href="/"><img src='images/IUIFinal.png' /></a></div>
+			<ul class=nav>
+				<li><a href='/#/about'>About</a></li>
+				<li><a href='/#/how'>How It Works</a></li>
+				<li><a href='/#/blog'>Blog</a></li>
 			</ul>
 		</div>
-		<div id="logo">
-			<a href="index.html" style="outline:none;" title="InSource">
-				<img src="/images/IUFinal.png" border="0" width="200px"/>
-			</a>
+		<div class=content>
+			<div class=sidebar>
+				<ul>
+					<li><a href="/#/graphic">Graphic Design</a></li>
+					<li><a href="/#/webdev">Web Design</a></li>
+					<li><a href="/#/appdev">App Development</a></li>
+				</ul>
+			</div>
+			<div class=page-container>
+				<div class=page>
+					<div class=title>Feathr Api</div>
+				</div>
+				<div class=page>
+					<div class=title>Feathr Api</div>
+				</div>
+			</div>
 		</div>
-	</div> <!-- /header -->
-	<div style="clear:both;"></div>
-	
-	<div id="rotator">
 
-		<div class="page">
-			Test
-		</div>
-
-	</div> <!-- /rotator -->
-</div> <!-- /outter -->
-
-</body>
+	</body>
 </html>
