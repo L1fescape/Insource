@@ -41,7 +41,7 @@ html, body {
 }
 
 body {
-	background: url("images/navy_blue.png");
+	background: url("images/office.png");
 	background-position: 0% 0%;
 	background-repeat: repeat repeat;
 	position:absolute;
@@ -179,14 +179,14 @@ p.date {
 
 .sidebar {
 	position:fixed;
-	background:#222;
+	background: url("images/navy_blue.png");
+	background-position: 0% 0%;
+	background-repeat: repeat repeat;
 	top:130px;
 	left:0;
 	width:210px;
-	height:340px;
+	height:440px;
 	padding:20px 0;
-	border-top-right-radius:5px;
-	border-bottom-right-radius:5px;
 }
 
 .sidebar ul {
@@ -197,16 +197,35 @@ p.date {
 	list-style:none;
 	margin:0;
 	padding:0;
+	height:30px;
+	text-shadow: 0px 1px 2px #bbb;  
+	-webkit-box-shadow: 0px 2px 4px #333;  
+	-moz-box-shadow: 0px 2px 4px #333;  
+	box-shadow: 0px 2px 4px #333;
+	position:relative;
 }
+
 
 .sidebar a {
 	padding:5px 10px;
+	width:210px;
 	display:block;
 	text-transform:uppercase;
 	font-weight:700;
 	color:#333;
 	text-decoration:none;
 	text-align:right;
+}
+.sidebar li a:after {
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+	right: -20px;
+	top: 100%;
+	border-width: 5px 10px;
+	border-style: solid;
+	border-color: #333 transparent transparent #333;
 }
 
 .sidebar a[href='/#/graphic'] {
@@ -240,7 +259,6 @@ p.date {
 .page {
 	min-height:300px;
 	border: 1px solid #B5B9B9;
-	border-radius:7px;
 	background:#fff;
 	width:200px;
 	padding:20px;
