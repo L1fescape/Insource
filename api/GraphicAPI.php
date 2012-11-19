@@ -52,7 +52,10 @@ class GraphicAPI {
 				"email" => $row["email"],
 				"phone" => $row["phone"],
 				"picture" => $row["picture"],
-				"bio" => $row["bio"]
+				"bio" => $row["bio"],
+				"resume" => $row["resume"],
+				"portfolio" => $row["portfolio"],
+				"key" => $row["key"]
 			));
 		}
 

@@ -341,6 +341,20 @@ ul.faq ul li {
 	margin-bottom:20px
 }
 
+ul.port-nav {
+	margin-left:20px;
+}
+ul.port-nav li {
+	list-style:none;
+}
+ul.port-nav a {
+	color:#333;
+	text-decoration:none;
+}
+ul.port-nav a:hover {
+	color:#000;
+}
+
 .portfolio {
 	margin:40px 0 20px -20px;
 	width:440px;
@@ -348,7 +362,7 @@ ul.faq ul li {
 }
 
 .portfolio-container {
-	width:4000px;
+	width:7000px;
 }
 
 .portfolio img {

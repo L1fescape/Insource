@@ -68,30 +68,48 @@ var Pages = {
 
 	Graphic : {
 		createCard : function(person) {
+			// TODO this is a bad way of switching layouts
+			$(".page.graphic").removeClass("port-layout");
+			$(".page.graphic").addClass("card-layout");
+
 			var card = "<a href='/#/graphic/"+person.key+"'>"+person.name+"</a>";
 			return card;
 		},
 		createPortfolio : function(person) {
+			// TODO this is a bad way of switching layouts
+			$(".page.graphic").removeClass("card-layout");
+			$(".page.graphic").addClass("port-layout");
+
 			var sidebar = "<div class=headshot>										\
 											<img src='"+person["picture"]+"' />		\
 										</div>																	\
 										<div class='person-title graphic'>			\
 											" + person["name"] + "								\
-										</div>";
+										</div>																	\
+										<ul class=port-nav>										\
+											<li><a href='/#/graphic/"+person["key"]+"/bio'>Bio</a></li>	\
+											<li><a href='/#/graphic/"+person["key"]+"/portfolio'>Portfolio</a></li>	\
+											<li><a href='/#/graphic/"+person["key"]+"/contact'>Contact</a></li>	\
+										</ul>";
 
-			var content = "<div class='page-title graphic'>				\
+
+			var content = "<div class='page-title graphic' graphic='bio'>		\
 											<h2>Bio</h2>													\
 										</div>																	\
 										<p>" + person['bio'] + "</p>						\
 										<p style='height:40px'></p>							\
-										<div class='page-title graphic'>				\
+										<div class='page-title graphic' graphic='portfolio'>	\
 											<h2>Portfolio</h2>										\
 										</div>																	\
 										<div class=portfolio>										\
-											<div class=portfolio-container>				\
-											</div>																\
+											<div class=portfolio-container>";
+			console.log(graphic.portfolio);
+											for (var i in graphic.portfolio) {
+											 content += "<img src='/content/"+person.key+"/"+graphic.portfolio[i]+"' />";
+											}	 
+					content +="</div>																	\
 										</div>																	\
-										<div class='page-title graphic'>				\
+										<div class='page-title graphic' graphic='contact'>	\
 											<h2>Contact</h2>											\
 										</div>																	\
 										<p>Email: " + person['email'] + "</p>		\

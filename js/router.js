@@ -63,24 +63,40 @@ var WorkspaceRouter = Backbone.Router.extend({
 
 
 	graphic : function(key, type) {
-		Pages.defaultHide();
-
+		
 		key = key || "";
 		type = type || "";
+		
+		// If the url hash changes, but we're still on the portfolio page,
+		// that means we've clicked a link to content we want to scroll to.
+		// Let's do this *queue epic music*
+		if ($(".page.graphic.port-layout").is(":visible")) {
+				if (type) 
+					Pages.scrollTo("[graphic="+type+"]");
+				else
+					Pages.scrollTo("body");
+		}
+		// Well that was ... anticlimactic
+		
+		else {
+			Pages.defaultHide();
 
-		var route = "/api/?method=graphic&format=portfolio&key="+key;
-		$.get( route, function(output) {
-			output = JSON.parse(output);
-			graphic = output["graphic"][0];
-			var profile = Pages.Graphic.createPortfolio(graphic);
+			var route = "/api/?method=graphic&format=portfolio&key="+key;
+			$.get( route, function(output) {
+				output = JSON.parse(output);
+				graphic = output["graphic"][0];
+				graphic.portfolio = graphic.portfolio.split(",");
+				var profile = Pages.Graphic.createPortfolio(graphic);
 
-			$(".sidebar.right").html(profile.sidebar);
-			$(".page.graphic").html(profile.content);
+				$(".sidebar.right").html(profile.sidebar);
+				$(".page.graphic").html(profile.content);
 
-			$(".sidebar.right").show();
+				$(".sidebar.right").show();
 
-			$(".page.graphic").show();
-		});
+				$(".page.graphic").show();
+				
+			});
+		}
 	}
 
 });
