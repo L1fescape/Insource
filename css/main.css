@@ -160,7 +160,7 @@ p.date {
 	color:#c34820;
 }
 
-.nav a[href='/#/blog']:hover {
+.nav a[href='/#/faq']:hover {
 	color:#a8af3f;
 }
 
@@ -218,14 +218,43 @@ p.date {
 	background:url(images/icons/appdev.png) 0% 60% no-repeat;
 }
 
+
+ul.faq {
+	padding:10px;
+}	
+ul.faq li {
+	list-style:none;
+	padding-bottom:10px;
+}
+ul.faq a {
+	color:#333;
+	text-decoration:none;
+}
+ul.faq a:hover {
+	color:#000;
+}
+ul.faq li {
+	font-weight:800;
+}
+ul.faq ul	{
+	padding-left:10px;
+	padding-bottom:20px;
+}
+ul.faq ul li {
+	font-weight:400;
+}
+
+
+
 .person-title {
-	text-align:center;
+	font-size:18px;
 	margin:10px 0;
-	text-transform:uppercase;
+	margin-left:20px;
+	font-weight:800;
 }
 
 .person-title.graphic {
-	color:#d97322;
+	/*color:#d97322;*/
 }
 
 .nav.right {
@@ -266,7 +295,7 @@ p.date {
 .page-title.how h2 {
 	background-color: #c34820;  
 }
-.page-title.blog h2 {
+.page-title.faq h2 {
 	background-color: #a8af3f;  
 }
 .page-title.graphic h2 {
@@ -303,6 +332,13 @@ p.date {
 	border-width: 5px 10px;  
 	border-style: solid;  
 	border-color: #666 #666 transparent transparent;  
+}
+
+.page-title.faq div {
+	color:#333;
+	font-size:12px;
+	margin-top:-10px;
+	margin-bottom:20px
 }
 
 .portfolio {
