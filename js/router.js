@@ -59,17 +59,20 @@ var WorkspaceRouter = Backbone.Router.extend({
 		}
 	},
 
+
+
+
 	graphic : function(key, type) {
 		Pages.defaultHide();
 
-		key = key || "all";
+		key = key || "";
 		type = type || "";
 
-		var route = "/api/?method=graphic&key="+key;
+		var route = "/api/?method=graphic&format=portfolio&key="+key;
 		$.get( route, function(output) {
 			output = JSON.parse(output);
 			graphic = output["graphic"][0];
-			var profile = Pages.Graphic.createProfile(graphic);
+			var profile = Pages.Graphic.createPortfolio(graphic);
 
 			$(".sidebar.right").html(profile.sidebar);
 			$(".page.graphic").html(profile.content);

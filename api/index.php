@@ -19,13 +19,13 @@ $method = $route->get("method");
 // Card, Portfolio
 $format = $route->get("format");
 
+// Invoke API classes
+$graphic = new GraphicAPI();
+// ... web design, app dev, ...
+
 
 if ($method == "all") {
 	$return = array();
-
-	$graphic = new GraphicAPI();
-	// ... web design, app dev, ...
-
 
 	if ($format == "card") {
 		$return["graphic"] = $graphic->getCards();

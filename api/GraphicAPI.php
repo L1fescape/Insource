@@ -21,10 +21,8 @@ class GraphicAPI {
 		while ($row = mysql_fetch_array($result)) {
 			array_push($graphic, array(
 				"name" => $row["name"],
-				"email" => $row["email"],
-				"phone" => $row["phone"],
 				"picture" => $row["picture"],
-				"bio" => $row["bio"]
+				"key" => $row["key"]
 			));
 		}
 

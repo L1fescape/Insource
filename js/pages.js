@@ -33,11 +33,45 @@ var Pages = {
 		}
 	},
 
+	All : {
+		createCards : function(callback) {
+			var cards = {};
+			
+			// Store references to the templates for each type of card
+			var cardTemplates = {
+				"graphic" : Pages.Graphic.createCard
+			};
+			
+			// Headers for each card type
+			cards["graphic"] = '<div class="page-title graphic" style=""><h2>Graphic Design</h2></div>';
+			
+			var route = "/api/?method=all&format=card";
+			$.get(route, function(output) {
+				output = JSON.parse(output);
+				
+				for (var type in output) {
+					for (var p in output[type]) {
+						var person = output[type][p];
+						cards[type] += cardTemplates[type](person);
+					}
+				}
+
+				// Combine all html into one var
+				var content = "";
+				for (var card in cards) {
+					content += cards[card];
+				}
+				if (callback) callback(content);
+			});
+		}
+	},
+
 	Graphic : {
 		createCard : function(person) {
-			return "";
+			var card = "<a href='/#/graphic/"+person.key+"'>"+person.name+"</a>";
+			return card;
 		},
-		createProfile : function(person) {
+		createPortfolio : function(person) {
 			var sidebar = "<div class=headshot>										\
 											<img src='"+person["picture"]+"' />		\
 										</div>																	\
