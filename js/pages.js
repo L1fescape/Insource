@@ -71,8 +71,23 @@ var Pages = {
 			// TODO this is a bad way of switching layouts
 			$(".page.graphic").removeClass("port-layout");
 			$(".page.graphic").addClass("card-layout");
+			
+			person.portfolio = person.portfolio.split(",");
 
-			var card = "<a href='/#/graphic/"+person.key+"'>"+person.name+"</a>";
+			var card = "<a href='/#/graphic/"+person.key+"'>	\
+										<div class=card>	\
+											<img class=headshot src='"+person.picture+"' />	\
+											<h3>Name</h3>"+person.name+"	\
+											<h3>Portfolio</h3>	\
+											<div class=mini-port>";
+											for (var i in person.portfolio) {
+												if (i == 5)
+													break;
+												card += "<img src='/content/"+person.key+"/"+person.portfolio[i]+"' />"
+											}
+						card += "</div>	\
+										</div>	\
+									</a>";
 			return card;
 		},
 		createPortfolio : function(person) {
@@ -103,7 +118,6 @@ var Pages = {
 										</div>																	\
 										<div class=portfolio>										\
 											<div class=portfolio-container>";
-			console.log(graphic.portfolio);
 											for (var i in graphic.portfolio) {
 											 content += "<img src='/content/"+person.key+"/"+graphic.portfolio[i]+"' />";
 											}	 

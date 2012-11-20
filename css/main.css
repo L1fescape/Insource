@@ -232,6 +232,7 @@ ul.faq a {
 }
 ul.faq a:hover {
 	color:#000;
+	margin-left:2px;
 }
 ul.faq li {
 	font-weight:800;
@@ -370,9 +371,16 @@ ul.port-nav a:hover {
 	float:left;
 }
 
+.portfolio-layout {
+	width:400px;
+}
+
+.card-layout {
+	width:700px;
+}
 
 .card {
-	width:200px;
+	width:400px;
 	background:#fff;
 	border:1px solid #333;
 	border-radius:5px;
@@ -383,6 +391,9 @@ ul.port-nav a:hover {
 }
 
 .card .headshot {
+	width:200px;
+}
+.card .mini-port img {
 	width:100px;
 }
 

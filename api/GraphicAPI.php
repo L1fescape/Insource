@@ -22,6 +22,7 @@ class GraphicAPI {
 			array_push($graphic, array(
 				"name" => $row["name"],
 				"picture" => $row["picture"],
+				"portfolio" => $row["portfolio"],
 				"key" => $row["key"]
 			));
 		}
