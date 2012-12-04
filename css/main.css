@@ -206,16 +206,16 @@ p.date {
 	background:url(images/icons/programmer.png) 0% 60% no-repeat;
 }
 
-.nav.sub a[href='/#/appdev'] {
+.nav.sub a[href='/#/photography'] {
 	color:#fff;
 	padding-left:30px;
-	background:url(images/icons/appdev.png) 0% 60% no-repeat;
+	background:url(images/icons/photography_gray.png) 0% 60% no-repeat;
 }
 
-.nav.sub a[href='/#/appdev']:hover {
+.nav.sub a[href='/#/photography']:hover {
 	color:#b06891;
 	padding-left:30px;
-	background:url(images/icons/appdev.png) 0% 60% no-repeat;
+	background:url(images/icons/photography.png) 0% 60% no-repeat;
 }
 
 
@@ -305,7 +305,7 @@ ul.faq ul li {
 .page-title.webdesign h2 {
 	background-color:#ffdf50;  
 }
-.page-title.appdev h2 {
+.page-title.photography h2 {
 	background-color:#b06891;  
 }
 
@@ -368,7 +368,27 @@ ul.port-nav a:hover {
 
 .portfolio img {
 	width:440px;
+	height:320px;
 	float:left;
+}
+
+.portfolio-thumb-container {
+	width:100%;
+	margin-top:20px;
+	padding:0 10px;
+}
+
+.portfolio-thumb-container img {
+	width:50px;
+	height:50px;
+	margin-bottom:10px;
+	margin-right:10px;
+	float:left;
+}
+
+.portfolio-thumb-container img.active {
+	border:2px blue solid;
+	margin: -2px 8px 8px -2px;
 }
 
 .portfolio-layout {
@@ -376,27 +396,47 @@ ul.port-nav a:hover {
 }
 
 .card-layout {
-	width:700px;
+	width:550px;
 }
 
 .card {
-	width:400px;
+	position:relative;
+	width:470px;
 	background:#fff;
-	border:1px solid #333;
-	border-radius:5px;
 	padding:20px;
+	background:whiteSmoke;
+	margin:20px;
 	-webkit-box-shadow: 0 8px 6px -6px black;
 	-moz-box-shadow: 0 8px 6px -6px black;
 	box-shadow: 0 8px 6px -6px black;
 }
 
+.card h3 {
+	margin-top:20px;
+	color:#333;
+	text-decoration:none;
+}
+
 .card .headshot {
-	width:200px;
+	width:150px;
 }
 .card .mini-port img {
 	width:100px;
+	height:80px;
+	margin-right:10px;
 }
 
+.card-info {
+	width:300px;
+	position:absolute;
+	top:0px;
+	left:190px;
+	overflow:hidden;
+}
+
+.mini-port {
+	width:100000px;
+}
 
 
 .footer {

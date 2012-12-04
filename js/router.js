@@ -1,23 +1,38 @@
 var WorkspaceRouter = Backbone.Router.extend({
 
 	routes: {
-		"":											"home",
-		"about":								"about",
-		"how":									"how",
-		"faq":									"faq",
-		"faq/:type":						"faq",
-		"faq/:type/:title":			"faq",
+		"":												"home",
+		"about":									"about",
+		"how":										"how",
+		"faq":										"faq",
+		"faq/:type":							"faq",
+		"faq/:type/:title":				"faq",
 
-		"graphic":							"graphic",
-		"graphic/:key":					"graphic",
-		"graphic/:key/:type":		"graphic"
+		"graphic":								"graphic",
+		"graphic/:key":						"graphic",
+		"graphic/:key/:type":			"graphic",
+
+		"photography":						"photography",
+		"photography/:key":				"photography",
+		"photography/:key/:type":	"photography",
+
+		"webdesign":						"webdesign",
+		"webdesign/:key":				"webdesign",
+		"webdesign/:key/:type":	"webdesign"
 	},
 	
 	home : function() {
 		Pages.defaultHide();
 		Pages.All.createCards(function(content) {
-			$(".page.graphic").html(content);
+			$(".page.graphic").html(content["graphic"]);
+			$(".page.photography").html(content["photography"]);
+			$(".page.webdesign").html(content["webdesign"]);
 			$(".graphic").show();
+			// TODO remove this
+			if ($(".page.photography a").length)
+				$(".photography").show();
+			if ($(".page.webdesign a").length)
+				$(".webdesign").show();
 		});
 	},
 	about : function() {
@@ -67,10 +82,18 @@ var WorkspaceRouter = Backbone.Router.extend({
 		key = key || "";
 		type = type || "";
 		
+		if (key == "" && type == "") {
+			Pages.defaultHide();
+			Pages.All.createCards(function(content) {
+				$(".page.graphic").html(content["graphic"]);
+				$(".graphic").show();
+			});
+		}
+
 		// If the url hash changes, but we're still on the portfolio page,
 		// that means we've clicked a link to content we want to scroll to.
 		// Let's do this *queue epic music*
-		if ($(".page.graphic.port-layout").is(":visible")) {
+		else if ($(".page.graphic.port-layout").is(":visible")) {
 				if (type) 
 					Pages.scrollTo("[graphic="+type+"]");
 				else
@@ -97,7 +120,100 @@ var WorkspaceRouter = Backbone.Router.extend({
 				
 			});
 		}
+	},
+
+
+	photography : function(key, type) {
+		
+		key = key || "";
+		type = type || "";
+		
+		if (key == "" && type == "") {
+			// load photography cards only
+			Pages.defaultHide();
+			Pages.All.createCards(function(content) {
+				$(".page.photography").html(content["photography"]);
+				$(".photography").show();
+			});
+		}
+
+		// If the url hash changes, but we're still on the portfolio page,
+		// that means we've clicked a link to content we want to scroll to.
+		// Let's do this *queue epic music*
+		else if ($(".page.photography.port-layout").is(":visible")) {
+				if (type) 
+					Pages.scrollTo("[photography="+type+"]");
+				else
+					Pages.scrollTo("body");
+		}
+		// Well that was ... anticlimactic
+		
+		else {
+			Pages.defaultHide();
+
+			var route = "/api/?method=photography&format=portfolio&key="+key;
+			$.get( route, function(output) {
+				output = JSON.parse(output);
+				photography = output["photography"][0];
+				photography.portfolio = photography.portfolio.split(",");
+				var profile = Pages.Photography.createPortfolio(photography);
+
+				$(".sidebar.right").html(profile.sidebar);
+				$(".page.photography").html(profile.content);
+
+				$(".sidebar.right").show();
+
+				$(".page.photography").show();
+				
+			});
+		}
+	},
+
+	webdesign : function(key, type) {
+		
+		key = key || "";
+		type = type || "";
+		
+		if (key == "" && type == "") {
+			Pages.defaultHide();
+			Pages.All.createCards(function(content) {
+				$(".page.webdesign").html(content["webdesign"]);
+				$(".webdesign").show();
+			});
+		}
+
+		// If the url hash changes, but we're still on the portfolio page,
+		// that means we've clicked a link to content we want to scroll to.
+		// Let's do this *queue epic music*
+		else if ($(".page.webdesign.port-layout").is(":visible")) {
+				if (type) 
+					Pages.scrollTo("[webdesign="+type+"]");
+				else
+					Pages.scrollTo("body");
+		}
+		// Well that was ... anticlimactic
+		
+		else {
+			Pages.defaultHide();
+
+			var route = "/api/?method=webdesign&format=portfolio&key="+key;
+			$.get( route, function(output) {
+				output = JSON.parse(output);
+				webdesign = output["webdesign"][0];
+				webdesign.portfolio = webdesign.portfolio.split(",");
+				var profile = Pages.Webdesign.createPortfolio(webdesign);
+
+				$(".sidebar.right").html(profile.sidebar);
+				$(".page.webdesign").html(profile.content);
+
+				$(".sidebar.right").show();
+
+				$(".page.webdesign").show();
+				
+			});
+		}
 	}
+
 
 });
 
