@@ -16,9 +16,9 @@ var WorkspaceRouter = Backbone.Router.extend({
 		"photography/:key":				"photography",
 		"photography/:key/:type":	"photography",
 
-		"webdesign":						"webdesign",
-		"webdesign/:key":				"webdesign",
-		"webdesign/:key/:type":	"webdesign"
+		"webdesign":							"webdesign",
+		"webdesign/:key":					"webdesign",
+		"webdesign/:key/:type":		"webdesign"
 	},
 	
 	home : function() {
@@ -27,12 +27,14 @@ var WorkspaceRouter = Backbone.Router.extend({
 			$(".page.graphic").html(content["graphic"]);
 			$(".page.photography").html(content["photography"]);
 			$(".page.webdesign").html(content["webdesign"]);
-			$(".graphic").show();
-			// TODO remove this
-			if ($(".page.photography a").length)
-				$(".photography").show();
-			if ($(".page.webdesign a").length)
-				$(".webdesign").show();
+
+			// If there are no people in a category, don't show that category
+			for ( var p = 0; p < $(".page").length; p++ ) {
+				var page = $(".page").eq(p);
+				if ($(page).find("a").length)
+					$(page).show();
+			}
+				
 		});
 	},
 	about : function() {
@@ -48,7 +50,6 @@ var WorkspaceRouter = Backbone.Router.extend({
 		title = title || "";
 		
 		if ($(".page.faq").is(":visible")) {
-			
 			if (type && !title) 
 				Pages.scrollTo(".page-title."+type);
 			else if (title)
@@ -117,6 +118,10 @@ var WorkspaceRouter = Backbone.Router.extend({
 				$(".sidebar.right").show();
 
 				$(".page.graphic").show();
+				$('.portfolio-container a').lightBox({
+					fixedNavigation:true,
+					keyToClose:"esc",
+				});
 				
 			});
 		}
@@ -164,6 +169,10 @@ var WorkspaceRouter = Backbone.Router.extend({
 				$(".sidebar.right").show();
 
 				$(".page.photography").show();
+				$('.portfolio-container a').lightBox({
+					fixedNavigation:true,
+					keyToClose:"esc",
+				});
 				
 			});
 		}
@@ -209,22 +218,14 @@ var WorkspaceRouter = Backbone.Router.extend({
 				$(".sidebar.right").show();
 
 				$(".page.webdesign").show();
+				$('.portfolio-container a').lightBox({
+					fixedNavigation:true,
+					keyToClose:"esc",
+				});
 				
 			});
 		}
 	}
 
 
-});
-
-
-$(document).ready(function() {
-	var app = new WorkspaceRouter();
-	Backbone.history.start();
-	$("body").keypress(function(e) {
-		if (e.which == 97)
-			Pages.userPrev();
-		else if (e.which == 100)
-			Pages.userNext();
-	});
 });

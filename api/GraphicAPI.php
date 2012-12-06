@@ -1,25 +1,27 @@
 <?php
 
 // Import database connection
-include("db.php");
+include_once("db.php");
 
 class GraphicAPI {
+	private $table_name = "graphic";
+
 	public function getCards($key="") {
 		$db = new DB();
 		$db->connect();
 
 		if ($key == "") {
-			$query = "SELECT * FROM graphic;";
+			$query = "SELECT * FROM $this->table_name;";
 		}
 		else {
-			$query = "SELECT * FROM graphic WHERE `key`='$key';";
+			$query = "SELECT * FROM $this->table_name WHERE `key`='$key';";
 		}
 
 		$result = mysql_query($query, $db->conn);
 
-		$graphic = array();
+		$cards = array();
 		while ($row = mysql_fetch_array($result)) {
-			array_push($graphic, array(
+			array_push($cards, array(
 				"name" => $row["name"],
 				"picture" => $row["picture"],
 				"portfolio" => $row["portfolio"],
@@ -30,7 +32,7 @@ class GraphicAPI {
 		// Close database connection
 		$db->close();
 		
-		return $graphic;
+		return $cards;
 	}
 
 	public function getPortfolios($key="") {
@@ -38,17 +40,17 @@ class GraphicAPI {
 		$db->connect();
 
 		if ($key == "") {
-			$query = "SELECT * FROM graphic;";
+			$query = "SELECT * FROM $this->table_name;";
 		}
 		else {
-			$query = "SELECT * FROM graphic WHERE `key`='$key';";
+			$query = "SELECT * FROM $this->table_name WHERE `key`='$key';";
 		}
 
 		$result = mysql_query($query, $db->conn);
 
-		$graphic = array();
+		$portfolios = array();
 		while ($row = mysql_fetch_array($result)) {
-			array_push($graphic, array(
+			array_push($portfolios, array(
 				"name" => $row["name"],
 				"email" => $row["email"],
 				"phone" => $row["phone"],
@@ -63,7 +65,7 @@ class GraphicAPI {
 		// Close database connection
 		$db->close();
 		
-		return $graphic;
+		return $portfolios;
 	}
 }
 

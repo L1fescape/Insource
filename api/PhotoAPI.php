@@ -4,22 +4,24 @@
 include_once("db.php");
 
 class PhotoAPI {
+	private $table_name = "photography";
+
 	public function getCards($key="") {
 		$db = new DB();
 		$db->connect();
 
 		if ($key == "") {
-			$query = "SELECT * FROM photography;";
+			$query = "SELECT * FROM $this->table_name;";
 		}
 		else {
-			$query = "SELECT * FROM photography WHERE `key`='$key';";
+			$query = "SELECT * FROM $this->table_name WHERE `key`='$key';";
 		}
 
 		$result = mysql_query($query, $db->conn);
 
-		$photography = array();
+		$cards = array();
 		while ($row = mysql_fetch_array($result)) {
-			array_push($photography, array(
+			array_push($cards, array(
 				"name" => $row["name"],
 				"picture" => $row["picture"],
 				"portfolio" => $row["portfolio"],
@@ -30,7 +32,7 @@ class PhotoAPI {
 		// Close database connection
 		$db->close();
 		
-		return $photography;
+		return $cards;
 	}
 
 	public function getPortfolios($key="") {
@@ -38,17 +40,17 @@ class PhotoAPI {
 		$db->connect();
 
 		if ($key == "") {
-			$query = "SELECT * FROM photography;";
+			$query = "SELECT * FROM $this->table_name;";
 		}
 		else {
-			$query = "SELECT * FROM photography WHERE `key`='$key';";
+			$query = "SELECT * FROM $this->table_name WHERE `key`='$key';";
 		}
 
 		$result = mysql_query($query, $db->conn);
 
-		$photography = array();
+		$portfolios = array();
 		while ($row = mysql_fetch_array($result)) {
-			array_push($photography, array(
+			array_push($portfolios, array(
 				"name" => $row["name"],
 				"email" => $row["email"],
 				"phone" => $row["phone"],
@@ -63,7 +65,7 @@ class PhotoAPI {
 		// Close database connection
 		$db->close();
 		
-		return $photography;
+		return $portfolios;
 	}
 }
 

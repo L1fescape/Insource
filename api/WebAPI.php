@@ -4,22 +4,24 @@
 include_once("db.php");
 
 class WebAPI {
+	private $table_name = "webdesign";
+
 	public function getCards($key="") {
 		$db = new DB();
 		$db->connect();
 
 		if ($key == "") {
-			$query = "SELECT * FROM webdesign;";
+			$query = "SELECT * FROM $this->table_name;";
 		}
 		else {
-			$query = "SELECT * FROM webdesign WHERE `key`='$key';";
+			$query = "SELECT * FROM $this->table_name WHERE `key`='$key';";
 		}
 
 		$result = mysql_query($query, $db->conn);
 
-		$webdesign = array();
+		$cards = array();
 		while ($row = mysql_fetch_array($result)) {
-			array_push($webdesign, array(
+			array_push($cards, array(
 				"name" => $row["name"],
 				"picture" => $row["picture"],
 				"portfolio" => $row["portfolio"],
@@ -30,7 +32,7 @@ class WebAPI {
 		// Close database connection
 		$db->close();
 		
-		return $webdesign;
+		return $cards;
 	}
 
 	public function getPortfolios($key="") {
@@ -38,17 +40,17 @@ class WebAPI {
 		$db->connect();
 
 		if ($key == "") {
-			$query = "SELECT * FROM webdesign;";
+			$query = "SELECT * FROM $this->table_name;";
 		}
 		else {
-			$query = "SELECT * FROM webdesign WHERE `key`='$key';";
+			$query = "SELECT * FROM $this->table_name WHERE `key`='$key';";
 		}
 
 		$result = mysql_query($query, $db->conn);
 
-		$webdesign = array();
+		$portfolios = array();
 		while ($row = mysql_fetch_array($result)) {
-			array_push($webdesign, array(
+			array_push($portfolios, array(
 				"name" => $row["name"],
 				"email" => $row["email"],
 				"phone" => $row["phone"],
@@ -63,7 +65,7 @@ class WebAPI {
 		// Close database connection
 		$db->close();
 		
-		return $webdesign;
+		return $portfolios;
 	}
 }
 

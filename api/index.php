@@ -3,8 +3,10 @@
 ini_set('display_errors', 'On');
 error_reporting(E_ALL | E_STRICT);
 
-// Import API
+// Import Router
 include("Route.php");
+
+// Import APIs
 include("GraphicAPI.php");
 include("PhotoAPI.php");
 include("WebAPI.php");
@@ -40,6 +42,7 @@ if ($method == "all") {
 	else if ($format == "portfolio") {
 		$return["graphic"] = $graphic->getPortfolios();
 		$return["photography"] = $photo->getPortfolios();
+		$return["webdesign"] = $web->getPortfolios();
 		// ... web design, app dev, ...
 	}
 

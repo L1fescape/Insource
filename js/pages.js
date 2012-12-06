@@ -52,6 +52,7 @@ var Pages = {
 			var route = "/api/?method=all&format=card";
 			$.get(route, function(output) {
 				output = JSON.parse(output);
+				console.log(output);
 				
 				for (var type in output) {
 					for (var p in output[type]) {
@@ -122,7 +123,7 @@ var Pages = {
 										<div class=portfolio>										\
 											<div class=portfolio-container>";
 											for (var i in graphic.portfolio) {
-											 content += "<img src='/content/"+person.key+"/"+graphic.portfolio[i]+"' />";
+											 content += "<a href='/content/"+person.key+"/"+graphic.portfolio[i]+"'><img src='/content/"+person.key+"/"+graphic.portfolio[i]+"' /></a>";
 											}	 
 											content += "<div style='clear:both;'></div>";
 					content +="</div>";
@@ -197,7 +198,7 @@ var Pages = {
 										<div class=portfolio>										\
 											<div class=portfolio-container>";
 											for (var i in photography.portfolio) {
-											 content += "<img src='/content/"+person.key+"/"+photography.portfolio[i]+"' />";
+											 content += "<a href='/content/"+person.key+"/"+photography.portfolio[i]+"'><img src='/content/"+person.key+"/"+photography.portfolio[i]+"' /></a>";
 											}	 
 											content += "<div style='clear:both;'></div>";
 					content +="</div>";
@@ -272,7 +273,7 @@ var Pages = {
 										<div class=portfolio>										\
 											<div class=portfolio-container>";
 											for (var i in webdesign.portfolio) {
-											 content += "<img src='/content/"+person.key+"/"+webdesign.portfolio[i]+"' />";
+											 content += "<a href='content/"+person.key+"/"+webdesign.portfolio[i]+"'><img src='/content/"+person.key+"/"+webdesign.portfolio[i]+"' /></a>";
 											}	 
 											content += "<div style='clear:both;'></div>";
 					content +="</div>";

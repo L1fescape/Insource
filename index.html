@@ -7,8 +7,12 @@
 		<!-- /Favicon -->
 
 		<!-- jQuery -->
-		<script src="libs/jquery.js"></script>
+		<script src="/libs/jquery.js"></script>
 		<!-- /jQuery -->
+
+		<!-- Lightbox -->
+		<script src="/libs/jquery.lightbox-0.5.min.js"></script>
+		<!-- /Lightbox -->
 		
 		<!-- Backbone & Underscore -->
 		<script src="libs/underscore.js"></script>
@@ -17,6 +21,7 @@
 
 		<!-- Style -->
 		<link href='css/main.css' rel='stylesheet' type='text/css'>
+		<link href='css/jquery.lightbox-0.5.css' rel='stylesheet' type='text/css'>
 		<!-- /Style -->
 	</head>
 	<body>
@@ -107,4 +112,16 @@
 	<script src='/js/router.js'></script>
 	<script src='/js/pages.js'></script>
 	<script src='/js/bindings.js'></script>
+	<script>
+		$(document).ready(function() {
+			var app = new WorkspaceRouter();
+			Backbone.history.start();
+			$("body").keypress(function(e) {
+				if (e.which == 97)
+					Pages.userPrev();
+				else if (e.which == 100)
+					Pages.userNext();
+			});
+		});
+	</script>
 </html>
