@@ -80,6 +80,137 @@ p.date {
 
 /* -- /Globals -- */
 
+/* -- Intro -- */
+
+.intro {
+	width:600px;
+	margin:10% auto 0;
+	text-align:center;
+	display:none;
+}
+
+.intro .title img {
+	width:250px;
+}
+
+.intro p {
+	font-size:14px;
+	margin-bottom: 10px;
+	color:#fff;
+}
+
+
+.intro-nav {
+	margin:20px 0 50px;
+}
+
+.intro-nav li {
+	list-style:none;
+	margin:0 10px;
+	display:inline-block;
+	font-size:18px;
+}
+
+.intro-nav li:after {
+	content:"//";
+	color:#eee;
+}
+
+.intro-nav li:last-child:after {
+	content:"";
+}
+
+.intro-nav a {
+	padding:5px 0px;
+	margin-right:20px;
+	font-size:14px;
+	text-transform:uppercase;
+	color:#fff;
+	text-decoration:none;
+	text-align:right;
+	opacity:0.7;
+}
+
+.intro-nav a[href='/#/about'] {
+	color:#90c7b5;
+}
+
+.intro-nav a[href='/#/how'] {
+	color:#c34820;
+}
+
+.intro-nav a[href='/#/faq'] {
+	color:#a8af3f;
+}
+
+.intro-nav a:hover {
+	opacity:1;
+}
+
+.intro-cat-nav {
+	margin-top:50px;
+}
+
+.intro-cat-nav li {
+	list-style:none;
+	margin:5px 0;
+	display:inline-block;
+	margin-right:20px;
+}
+
+.intro-cat-nav a {
+	padding:5px 0px;
+	font-size:16px;
+	text-transform:uppercase;
+	color:#fff;
+	text-decoration:none;
+	text-align:right;
+	opacity:0.8;
+}
+
+.intro-cat-nav a:hover {
+	opacity:1;
+}
+
+.intro-cat-nav a[href='/#/graphic'] {
+	padding-left:25px;
+	color:#d97322;
+	background:url(images/icons/graphic_gray.png) 0% 60% no-repeat;
+}
+
+.intro-cat-nav a[href='/#/graphic']:hover {
+	background:url(images/icons/graphic.png) 0% 60% no-repeat;
+	padding-left:25px;
+	color:#d97322;
+}
+
+.intro-cat-nav a[href='/#/webdesign'] {
+	color:#fff;
+	padding-left:25px;
+	background:url(images/icons/programmer_gray.png) 0% 60% no-repeat;
+	color:#ffdf50;
+}
+
+.intro-cat-nav a[href='/#/webdesign']:hover {
+	color:#ffdf50;
+	padding-left:25px;
+	background:url(images/icons/programmer.png) 0% 60% no-repeat;
+}
+
+.intro-cat-nav a[href='/#/photography'] {
+	color:#fff;
+	padding-left:25px;
+	background:url(images/icons/photography_gray.png) 0% 60% no-repeat;
+	color:#b06891;
+}
+
+.intro-cat-nav a[href='/#/photography']:hover {
+	color:#b06891;
+	padding-left:25px;
+	background:url(images/icons/photography.png) 0% 60% no-repeat;
+}
+
+
 
 /* -- Content -- */
 

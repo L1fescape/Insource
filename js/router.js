@@ -23,7 +23,7 @@ var WorkspaceRouter = Backbone.Router.extend({
 	
 	home : function() {
 		Pages.defaultHide();
-		Pages.All.createCards(function(content) {
+		/*Pages.All.createCards(function(content) {
 			$(".page.graphic").html(content["graphic"]);
 			$(".page.photography").html(content["photography"]);
 			$(".page.webdesign").html(content["webdesign"]);
@@ -35,7 +35,9 @@ var WorkspaceRouter = Backbone.Router.extend({
 					$(page).show();
 			}
 				
-		});
+		});*/
+		$(".intro").show();
+		$(".sidebar").hide();
 	},
 	about : function() {
 		Pages.defaultHide();
@@ -118,10 +120,7 @@ var WorkspaceRouter = Backbone.Router.extend({
 				$(".sidebar.right").show();
 
 				$(".page.graphic").show();
-				$('.portfolio-container a').lightBox({
-					fixedNavigation:true,
-					keyToClose:"esc",
-				});
+				$('.portfolio-container a').colorbox({rel:'gal', maxWidth:'80%', maxHeight:'80%'});
 				
 			});
 		}
@@ -169,10 +168,7 @@ var WorkspaceRouter = Backbone.Router.extend({
 				$(".sidebar.right").show();
 
 				$(".page.photography").show();
-				$('.portfolio-container a').lightBox({
-					fixedNavigation:true,
-					keyToClose:"esc",
-				});
+				$('.portfolio-container a').colorbox({rel:'gal', maxWidth:'80%', maxHeight:'80%'});
 				
 			});
 		}
@@ -218,10 +214,7 @@ var WorkspaceRouter = Backbone.Router.extend({
 				$(".sidebar.right").show();
 
 				$(".page.webdesign").show();
-				$('.portfolio-container a').lightBox({
-					fixedNavigation:true,
-					keyToClose:"esc",
-				});
+				$('.portfolio-container a').colorbox({rel:'gal', maxWidth:'80%', maxHeight:'80%'});
 				
 			});
 		}
