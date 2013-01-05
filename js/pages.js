@@ -51,6 +51,7 @@ var Pages = {
 			
 			var route = "/api/?method=all&format=card";
 			$.get(route, function(output) {
+				console.log(output)
 				output = JSON.parse(output);
 				console.log(output);
 				

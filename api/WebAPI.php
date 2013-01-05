@@ -1,7 +1,8 @@
 <?php
+$dir = "/var/www/Insource/api/";
 
 // Import database connection
-include_once("db.php");
+include_once($dir."db.php");
 
 class WebAPI {
 	private $table_name = "webdesign";
