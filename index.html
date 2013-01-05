@@ -11,7 +11,7 @@
 		<!-- /jQuery -->
 
 		<!-- Lightbox -->
-		<script src="/libs/jquery.lightbox-0.5.min.js"></script>
+		<script src="/libs/jquery.colorbox.js"></script>
 		<!-- /Lightbox -->
 		
 		<!-- Backbone & Underscore -->
@@ -20,12 +20,28 @@
 		<!-- /Backbone & Underscore -->
 
 		<!-- Style -->
-		<link href='css/main.css' rel='stylesheet' type='text/css'>
-		<link href='css/jquery.lightbox-0.5.css' rel='stylesheet' type='text/css'>
+		<link href='/css/main.css' rel='stylesheet' type='text/css'>
+		<link href='/css/colorbox.css' rel='stylesheet' type='text/css'>
 		<!-- /Style -->
+		<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 	</head>
 	<body>
 		<div class=container>
+		<div class=intro>
+				<div class=title><a href="/#/"><img src='images/IUIFinal_white.png' /></a></div>
+				<ul class=intro-nav>
+					<li><a href="/#/about">About</a></li>
+					<li><a href="/#/how">How It Works</a></li>
+					<li><a href="/#/faq">FAQ</a></li>
+				</ul>
+				<p>Our talented students want to improve your business.</p>
+				<p>Pick your artist and gain the competitive edge today.</p>
+				<ul class=intro-cat-nav>
+					<li><a href="/#/graphic">Graphic Design</a></li>
+					<li><a href="/#/webdesign">Web Design</a></li>
+					<li><a href="/#/photography">Photography</a></li>
+				</ul>
+		</div>
 			<div class='sidebar left'>
 				<div class=title><a href="/#/"><img src='images/IUIFinal_white.png' /></a></div>
 				<ul class='nav main'>
@@ -35,8 +51,8 @@
 				</ul>
 				<ul class='nav sub'>
 					<li><a href="/#/graphic">Graphic Design</a></li>
-					<li><a href="/#/photography">Photography</a></li>
 					<li><a href="/#/webdesign">Web Design</a></li>
+					<li><a href="/#/photography">Photography</a></li>
 				</ul>
 			</div>
 			<div class='sidebar right'></div>
@@ -112,16 +128,11 @@
 	<script src='/js/router.js'></script>
 	<script src='/js/pages.js'></script>
 	<script src='/js/bindings.js'></script>
+	<script src='/js/intro.js'></script>
 	<script>
 		$(document).ready(function() {
 			var app = new WorkspaceRouter();
 			Backbone.history.start();
-			$("body").keypress(function(e) {
-				if (e.which == 97)
-					Pages.userPrev();
-				else if (e.which == 100)
-					Pages.userNext();
-			});
 		});
 	</script>
 </html>

@@ -1,6 +1,8 @@
 var Pages = {
 	lastPerson : "",
 	defaultHide : function() {
+		$(".sidebar").show();
+		$(".intro").hide();
 		$(".page").hide();
 		$(".sidebar.right").hide();
 	},
@@ -52,7 +54,6 @@ var Pages = {
 			var route = "/api/?method=all&format=card";
 			$.get(route, function(output) {
 				output = JSON.parse(output);
-				console.log(output);
 				
 				for (var type in output) {
 					for (var p in output[type]) {
@@ -60,7 +61,6 @@ var Pages = {
 						cards[type] += cardTemplates[type](person);
 					}
 				}
-				console.log(cards)
 
 
 				if (callback) callback(cards);
