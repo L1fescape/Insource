@@ -41,7 +41,7 @@ html, body {
 }
 
 body {
-	background: url("images/navy_blue.png");
+	background: url("images/navy_blue_brighter.png");
 	background-position: 0% 0%;
 	background-repeat: repeat repeat;
 	position:absolute;
@@ -90,25 +90,25 @@ p.date {
 }
 
 .intro .title img {
-	width:250px;
+	width:300px;
 }
 
 .intro p {
-	font-size:14px;
+	font-size:18px;
 	margin-bottom: 10px;
 	color:#fff;
 }
 
 
 .intro-nav {
-	margin:20px 0 50px;
+	margin:40px 0 50px;
 }
 
 .intro-nav li {
 	list-style:none;
 	margin:0 10px;
 	display:inline-block;
-	font-size:18px;
+	font-size:22px;
 }
 
 .intro-nav li:after {
@@ -123,12 +123,12 @@ p.date {
 .intro-nav a {
 	padding:5px 0px;
 	margin-right:20px;
-	font-size:14px;
+	font-size:22px;
 	text-transform:uppercase;
 	color:#fff;
 	text-decoration:none;
 	text-align:right;
-	opacity:0.7;
+	opacity:0.8;
 }
 
 .intro-nav a[href='/#/about'] {
@@ -147,8 +147,12 @@ p.date {
 	opacity:1;
 }
 
+.help {
+	margin-top:40px;
+}
+
 .intro-cat-nav {
-	margin-top:50px;
+	margin-top:20px;
 }
 
 .intro-cat-nav li {
@@ -160,7 +164,7 @@ p.date {
 
 .intro-cat-nav a {
 	padding:5px 0px;
-	font-size:16px;
+	font-size:20px;
 	text-transform:uppercase;
 	color:#fff;
 	text-decoration:none;

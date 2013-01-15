@@ -81,7 +81,7 @@ var Pages = {
 										<div class=card>	\
 											<img class=headshot src='"+person.picture+"' />	\
 											<div class=card-info> \
-											<h3>Name</h3>"+person.name+"	\
+											<h3>"+person.name+"</h3>	\
 											<h3>Portfolio</h3>	\
 											<div class=mini-port>";
 											for (var i in person.portfolio) {
@@ -156,7 +156,7 @@ var Pages = {
 										<div class=card>	\
 											<img class=headshot src='"+person.picture+"' />	\
 											<div class=card-info> \
-											<h3>Name</h3>"+person.name+"	\
+											<h3>"+person.name+"</h3>	\
 											<h3>Portfolio</h3>	\
 											<div class=mini-port>";
 											for (var i in person.portfolio) {
@@ -231,7 +231,7 @@ var Pages = {
 										<div class=card>	\
 											<img class=headshot src='"+person.picture+"' />	\
 											<div class=card-info> \
-											<h3>Name</h3>"+person.name+"	\
+											<h3>"+person.name+"</h3>	\
 											<h3>Portfolio</h3>	\
 											<div class=mini-port>";
 											for (var i in person.portfolio) {

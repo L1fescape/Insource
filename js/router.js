@@ -120,7 +120,7 @@ var WorkspaceRouter = Backbone.Router.extend({
 				$(".sidebar.right").show();
 
 				$(".page.graphic").show();
-				$('.portfolio-container a').colorbox({rel:'gal', maxWidth:'80%', maxHeight:'80%'});
+				$('.portfolio-container a').colorbox({rel:'gal', maxWidth:'95%', maxHeight:'95%'});
 				
 			});
 		}
@@ -168,7 +168,7 @@ var WorkspaceRouter = Backbone.Router.extend({
 				$(".sidebar.right").show();
 
 				$(".page.photography").show();
-				$('.portfolio-container a').colorbox({rel:'gal', maxWidth:'80%', maxHeight:'80%'});
+				$('.portfolio-container a').colorbox({rel:'gal', maxWidth:'95%', maxHeight:'95%'});
 				
 			});
 		}
@@ -214,7 +214,7 @@ var WorkspaceRouter = Backbone.Router.extend({
 				$(".sidebar.right").show();
 
 				$(".page.webdesign").show();
-				$('.portfolio-container a').colorbox({rel:'gal', maxWidth:'80%', maxHeight:'80%'});
+				$('.portfolio-container a').colorbox({rel:'gal', maxWidth:'95%', maxHeight:'95%'});
 				
 			});
 		}
