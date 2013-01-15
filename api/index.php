@@ -3,13 +3,14 @@
 ini_set('display_errors', 'On');
 error_reporting(E_ALL | E_STRICT);
 
+$dir = "/var/www/Insource/api/";
 // Import Router
-include("Route.php");
+include($dir."Route.php");
 
 // Import APIs
-include("GraphicAPI.php");
-include("PhotoAPI.php");
-include("WebAPI.php");
+include($dir."GraphicAPI.php");
+include($dir."PhotoAPI.php");
+include($dir."WebAPI.php");
 
 
 // Get desired method from GET or POST vars

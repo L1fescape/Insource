@@ -2,8 +2,8 @@
 
 class DB {
 	// Connection credentials
-	private $db_user = "andrewk";
-	private $db_pass = "lolz";
+	private $db_user = "insource";
+	private $db_pass = "!Qw2#Er4";
 	private $db_name = "insource";
 
 	public $conn;
