@@ -3,26 +3,19 @@
 		<title>Insource University</title>
 
 		<!-- Favicon -->
-		<link rel="shortcut icon" href="images/favicon.png">
+		<link rel="shortcut icon" href="/images/favicon.png">
 		
-		<!-- jQuery -->
-		<script src="/libs/jquery.js"></script>
-		
-		<!-- Backbone & Underscore -->
-		<script src="libs/underscore.js"></script>
-		<script src="libs/backbone.js"></script>
-
 		<!-- Style -->
 		<link href='/css/main.css' rel='stylesheet' type='text/css'>
 
 	</head>
 	<body>
 		<div class=header>
-			<a href="/"><img src='images/insource_logo.png' /></a>
+			<a href="/"><img src='/images/insource_logo.png' /></a>
 			<ul class=nav>
-				<li><a href='/graphic-design'>Graphic Design</a></li>
-				<li><a href='/web-design'>Web Design</a></li>
-				<li><a href='/photography'>Photography</a></li>
+				<li><a href='/artists/#graphic-design'>Graphic Design</a></li>
+				<li><a href='/artists/#web-design'>Web Design</a></li>
+				<li><a href='/artists/#photography'>Photography</a></li>
 			</ul>
 		</div>
 		<div class=intro>
@@ -30,22 +23,24 @@
 				<p>Our talented students want to improve your business.</p>
 				<p>Pick your artist and gain the competitive edge today:</p>
 				<ul class=nav>
-					<li><a href='/graphic-design'>Graphic Design</a></li>
-					<li><a href='/web-design'>Web Design</a></li>
-					<li><a href='/photography'>Photography</a></li>
+					<li><a href='/artists/#graphic-design'>Graphic Design</a></li>
+					<li><a href='/artists/#web-design'>Web Design</a></li>
+					<li><a href='/artists/#photography'>Photography</a></li>
 				</ul>
 			</div>
-			<div class=featured-artist>
-				<div class=img>
-					<img src='/content/kennedy/headshot.jpg' />
-				</div>
+			<div class='featured-card card'>
+				<a href='/web-design/kennedy'>
+					<div class=img>
+						<img src='/content/kennedy/headshot.jpg' />
+					</div>
+				</a>
 				<div class=name><a href='/web-design/kennedy'>Andrew Kennedy <span class=follow>&rarr;</span></a></div>
 				<div class='type web-design'>Web Designer</div>
 				<ul class=tools><li>Javascript</li> <li>HTML</li> <li>CSS</li> <li>Python</li> <li>Flask</li> <li>Apache</li></ul>
 				<ul class=port>
-					<li><img src='/content/kennedy/thumb1.jpg' /></li>
-					<li><img src='/content/kennedy/thumb1.jpg' /></li>
-					<li><img src='/content/kennedy/thumb1.jpg' /></li>
+					<li><img src='/content/kennedy/thumb1.png' /></li>
+					<li><img src='/content/kennedy/thumb2.png' /></li>
+					<li><img src='/content/kennedy/thumb3.png' /></li>
 				</ul>
 			</div>
 			<div class=bottom>
@@ -62,14 +57,4 @@
 			</div>
 		</div>
 	</body>
-	<script src='/js/router.js'></script>
-	<script src='/js/pages.js'></script>
-	<script src='/js/bindings.js'></script>
-	<script src='/js/intro.js'></script>
-	<script>
-		$(document).ready(function() {
-			var app = new WorkspaceRouter();
-			Backbone.history.start();
-		});
-	</script>
 </html>
