@@ -42,7 +42,6 @@ html, body {
 }
 
 body {
-	background: url("images/navy_blue_brighter.png");
 	background-position: 0% 0%;
 	background-repeat: repeat repeat;
 	position:absolute;
@@ -117,15 +116,15 @@ p.date {
 	text-decoration:underline;
 }
 
-.nav a[href='/artists/#graphic-design'] {
+.nav a[href='/graphic-design'] {
 	color:#90c7b5;
 }
 
-.nav a[href='/artists/#web-design'] {
+.nav a[href='/web-design'] {
 	color:#c34820;
 }
 
-.nav a[href='/artists/#photography'] {
+.nav a[href='/photography'] {
 	color:#a8af3f;
 }
 
@@ -135,7 +134,7 @@ p.date {
 	width:100%;
 	background:url(/images/bg.png) no-repeat;
 	background-position: center top;
-	background-size:130% auto;
+	background-size:140% auto;
 	text-shadow: 0 1px 3px rgba(0,0,0,0.75);
 }
 
@@ -147,7 +146,7 @@ p.date {
 	width:32%;
 	margin-left:5%;
 	padding:50px 0;
-	height:400px;
+	height:440px;
 	position:relative;
 }
 
@@ -162,23 +161,52 @@ p.date {
 	margin:0 25px 0 0;
 }
 
+.intro .nav li.graphic {
+	background:url('images/graphic-icon.png') no-repeat;
+	background-position: center -210px;
+}
+
+.intro .nav li.graphic:hover {
+	background-position: center 0px;
+}
+
+.intro .nav li.web {
+	background:url('images/web-icon.png') no-repeat;
+	background-position: center -210px;
+}
+
+.intro .nav li.web:hover {
+	background-position: center 1px;
+}
+
+.intro .nav li.photography {
+	background:url('images/photography-icon.png') no-repeat;
+	background-position: center -210px;
+}
+
+.intro .nav li.photography:hover {
+	background-position: center 1px;
+}
+
 .intro .nav a {
 	color:#fff;
+	padding-top:90px;
+	display:block;
 }
 
 .intro .nav a:hover {
 	text-decoration:none;
 }
 
-.intro .nav a[href='/artists/#graphic-design']:hover {
+.intro .nav a[href='/graphic-design']:hover {
 	color:#90c7b5;
 }
 
-.intro .nav a[href='/artists/#web-design']:hover {
+.intro .nav a[href='/web-design']:hover {
 	color:#c34820;
 }
 
-.intro .nav a[href='/artists/#photography']:hover {
+.intro .nav a[href='/photography']:hover {
 	color:#a8af3f;
 }
 
@@ -335,11 +363,13 @@ p.date {
 }
 
 .intro .bottom .title {
-	color:#fff;
+	color:#888;
+	opacity:0.9;
 	position:absolute;
 	top:40%;
 	left:-10px;
-	font-size:20px;
+	font-size:26px;
+	font-weight:800;
 	-webkit-transform: rotate(-90deg);
 	-moz-transform: rotate(-90deg);
 	-ms-transform: rotate(-90deg);
@@ -379,10 +409,107 @@ p.date {
 }
 
 
+.faqs {
+	font-family: "Helvetica Neue", helvetica, sans-serif;
+	background:url('images/faq_bg.gif') top left repeat;
+	-webkit-box-shadow: inset 0 1px 0 rgba(0,0,0,0.75);
+	-moz-box-shadow: inset 0 1px 0 rgba(0,0,0,0.75);
+	box-shadow: inset 0 1px 0 rgba(0,0,0,0.75);
+	position:relative;
+	padding:30px;
+}
+
+.faqs .heading {
+	margin-left:10%;
+	padding:10px 0;
+	color:#fff;
+	font-size:24px;
+	font-weight:100;
+}
+
+.faqs .title {
+	color:#888;
+	opacity:0.9;
+	position:absolute;
+	top:40%;
+	font-size:26px;
+	font-weight:800;
+	-webkit-transform: rotate(-90deg);
+	-moz-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+	-o-transform: rotate(-90deg);
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+
+.faqs .col {
+	letter-spacing:1px;
+	color:#fff;
+	width:35%;
+	margin:10px 0 10px 10%;
+	float:left;
+	text-shadow: 0 1px 3px rgba(0,0,0,0.75);
+}
+
+.faqs .col h3 {
+	font-style:italic;
+}
+
+.clear {
+	clear:both;
+}
+
+.gap {
+	margin-top:40px;
+}
+
+
+.aboutus {
+	font-family: "Helvetica Neue", helvetica, sans-serif;
+	background:url('images/about_bg.gif') top left repeat;
+	-webkit-box-shadow: inset 0 1px 0 rgba(0,0,0,0.75);
+	-moz-box-shadow: inset 0 1px 0 rgba(0,0,0,0.75);
+	box-shadow: inset 0 1px 0 rgba(0,0,0,0.75);
+	position:relative;
+	padding:30px;
+}
+
+.aboutus .heading {
+	margin-left:10%;
+	padding:10px 0;
+	color:#fff;
+	font-size:24px;
+	font-weight:100;
+}
+
+.aboutus .title {
+	color:#888;
+	opacity:0.9;
+	position:absolute;
+	top:40%;
+	left:20px;
+	font-size:26px;
+	font-weight:800;
+	-webkit-transform: rotate(-90deg);
+	-moz-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+	-o-transform: rotate(-90deg);
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+.aboutus .section {
+	color:#fff;
+	margin:0 10%;
+	letter-spacing:1px;
+	color:#fff;
+	text-shadow: 0 1px 3px rgba(0,0,0,0.75);
+}
+
 
 /* -- Artists -- */
 .graphic-design-cont, .web-design-cont, .photography-cont {
 	width:100%;
+	height:auto;
 	box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.7) inset;
 	text-shadow: 0 1px 3px rgba(0,0,0,0.4);
 	position:relative;
