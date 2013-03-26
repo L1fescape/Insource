@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<title>{{category formatted; Photography}}</title>
+
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="/images/favicon.png">
+		
+		<!-- Style -->
+		<link href='/css/main.css' rel='stylesheet' type='text/css'>
+
+	</head>
+	<body>
+		<div class=header>
+			<a href="/"><img src='/images/insource_logo.png' /></a>
+			<ul class=nav>
+				<li><a href='/graphic-design'>Graphic Design</a></li>
+				<li><a href='/web-design'>Web Design</a></li>
+				<li><a href='/photography'>Photography</a></li>
+			</ul>
+		</div>
+		<div class='{{category; photography}}-cont'>
+			<!-- Card -->
+			<div class="card">
+				<a href='/{{category; photography}}/{{artist-id; smith}}'>
+					<div class="img">                                                                                                                                                                       
+						<img src="{{artist-id; smith}}/headshot.jpg" />                                                                                                                         
+					</div>
+				</a>
+				<div class="name"><a href="/{{category; photography}}/{{artist-id; smith}}">{{artist-Name; Nicole Smith}} <span class="follow">&rarr;</span></a></div>
+				<div class="type {{category; photography}}">{{category formatted; Photography}}</div>
+				<ul class="tools">
+					<li>{{tool; Photoshop}}</li>
+				</ul>
+				<ul class="port">
+					<li><img src="{{artist-id; smith}}/thumb1.jpg" /></li>
+					<li><img src="{{artist-id; smith}}/thumb2.jpg" /></li>
+					<li><img src="{{artist-id; smith}}/thumb3.jpg" /></li>
+				</ul>
+			</div>
+			<!-- /Card -->
+			
+			<div class=footer>
+				<a href="https://www.facebook.com/InsourceUniversity?sid=0.7552048019133508" target="_blank"><img src='/images/icons/facebook.png' /></a>
+				<p>Copyright Insource University 2013</p>
+			</div>
+	</body>
+</html>

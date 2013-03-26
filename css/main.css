@@ -679,16 +679,17 @@ img.featured-artist {
 
 .footer {
 	background:#111;
-	padding:5px;
+	padding:10px;
 	position:relative;
-	height:34px;
+	height:50px;
 }
 
 .footer p {
-	margin-left:10%;
+	margin-left:20px;
 	color:#fff;
 }
 .footer img {
-	position:absolute;
-	right:10%;
+	float:right;
+	margin-right:20px;
+	height:40px;
 }

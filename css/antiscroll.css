@@ -42,6 +42,8 @@
 
 .antiscroll-inner {
   overflow: scroll;
+	height:300px;
+	overflow-y:hidden;
 }
 
 .antiscroll-inner::-webkit-scrollbar, .antiscroll-inner::scrollbar {
